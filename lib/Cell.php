@@ -23,7 +23,7 @@ class Cell extends Customizable {
 		if ($this->colspan != null)
 			echo ' colspan=' . $this->colspan;
 		if ($this->rowspan != null)
-			echo 'rowspan=' . $this->rowspan;
+			echo ' rowspan=' . $this->rowspan;
 
 		echo '>' . $this->content . '</td>';
 	}
