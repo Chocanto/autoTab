@@ -1,7 +1,11 @@
 <?php
+namespace AutoTab;
 
 require_once('Cell.php');
 
+/**
+ * Classe permettant de créer une entête de tableau
+ */
 class Header extends Cell {
 	protected $id;
 	protected $position;

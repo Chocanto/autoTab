@@ -1,8 +1,13 @@
 <?php
+namespace AutoTab;
 
 require_once('Customizable.php');
 require_once('Cell.php');
 
+/**
+ * Classe représentant une ligne d'un tableau contenant des
+ * cellules
+ */
 class Row extends Customizable {
 	protected $cells;
 

@@ -1,7 +1,11 @@
 <?php
+namespace AutoTab;
 
 require_once('Customizable.php');
 
+/**
+ * Classe modélisant une cellule d'un tableau
+ */
 class Cell extends Customizable {
 	protected $content;
 	protected $colspan = null;

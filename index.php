@@ -4,38 +4,12 @@
     <meta charset="utf-8">
     <title>AutoTab</title>
     <meta name="description" content="">
-    <style type="text/css">
-      table {
-        border: 1px solid #aaa;
-        border-collapse: collapse;
-      }
-      thead {
-        background-color: #2196F3;
-        color: white;
-      }
-      table > caption {
-        font-style: italic;
-        margin-bottom: 10px;
-      }
-      th, td {
-        padding: 5px;
-        border-width: 0 1px 0 1px;
-        border-style: solid;
-        border-color: #aaa;
-      }
-      tr:nth-child(odd) > td {
-        background-color: #EAF6FF;
-      }
-      .specialCls {
-        background-color: green;
-        color: white;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
   </head>
 	<body>
+    <h1 class="title-main">Exemple d'utilisation de la bibliothèque AutoTab</h1>
 	  <?php
-	  	require_once('main.php');
+	  	require_once('example.php');
 	  ?>
   </body>
 </html>

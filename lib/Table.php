@@ -1,9 +1,13 @@
 <?php
+namespace AutoTab;
 
 require_once('Header.php');
 require_once('Customizable.php');
 require_once('Row.php');
 
+/**
+ * Classe dédiée à la création d'un tableau HTML
+ */
 class Table extends Customizable {
 	protected $headers;
 	protected $caption;

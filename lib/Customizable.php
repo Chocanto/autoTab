@@ -1,5 +1,10 @@
 <?php
+namespace AutoTab;
 
+/**
+ * Classe modélisant une entité pouvant être costumisée
+ * par des classes CSS
+ */
 class Customizable {
 	protected $cssClass;
 

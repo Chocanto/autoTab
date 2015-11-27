@@ -1,15 +1,21 @@
 <?php
 
-require_once('Table.php');
-require_once('Header.php');
-require_once('Row.php');
-require_once('Cell.php');
+require_once('lib/Table.php');
+require_once('lib/Header.php');
+require_once('lib/Row.php');
+require_once('lib/Cell.php');
+
+/**
+ * Script contenant des exemples d'utilisation
+ * des classes de la bibliothèque de génération
+ * de tableaux
+ */
 
 /**
 * Tableau simplement rempli à la main
 */
 function simpleTab() {
-	$table = new Table('Mon super tableau !');
+	$table = new AutoTab\Table('Mon super tableau !');
 	$table->addHeadersStr(array(
 		'Nom',
 		'Prenom',
@@ -26,16 +32,16 @@ function simpleTab() {
 	));
 
 	//Exemple d'ajout d'une ligne personnalisée
-	$row = new Row();
+	$row = new AutoTab\Row();
 
 	//Exemple de création d'une cellule personnalisée
-	$cellSpec = new Cell('Jean Pierre');
+	$cellSpec = new AutoTab\Cell('Jean Pierre');
 	$cellSpec->setColspan(2);
 	$cellSpec->addCssClass('specialCls');
 	$row->addCell($cellSpec);
 
-	$row->addCell(new Cell('11/11/1111'));
-	$row->addCell(new Cell('Nop !'));
+	$row->addCell(new AutoTab\Cell('11/11/1111'));
+	$row->addCell(new AutoTab\Cell('Nop !'));
 
 	$table->addRow($row);
 
@@ -47,7 +53,7 @@ function simpleTab() {
 * Tableau rempli par une matrice
 */
 function matrixTab() {
-	$table = new Table('Tableau rempli avec matrice');
+	$table = new AutoTab\Table('Tableau rempli avec matrice');
 
 	$table->addHeadersStr(array(
 		'Animal',
@@ -82,7 +88,7 @@ function fromDbTab() {
 	}
 
 	//Lance la création du tableau
-	$table = new Table('Liste des auteurs');
+	$table = new AutoTab\Table('Liste des auteurs');
 
 	$table->addHeadersStr(array(
 		'Id',
