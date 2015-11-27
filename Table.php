@@ -78,7 +78,7 @@ class Table extends Customizable {
 
 	public function sortHeaders() {
 		usort($this->headers, function($a, $b) {
-		    return strcmp($a->getPosition(), $b->getPosition());
+		    return $a->getPosition() - $b->getPosition();
 		});
 	}
 

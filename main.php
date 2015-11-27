@@ -65,9 +65,49 @@ function matrixTab() {
 	$table->render();
 }
 
+/**
+* Tableau rempli à partir de la base bibliothèque
+**/
+function fromDbTab() {
+	//Récupère les données de la BD
+	try {
+		$conn = new PDO('mysql:dbname=bibliotheque;host=127.0.0.1;charset=utf8', 'root', '');
+	} catch (PDOException $e) {
+		echo 'Connexion impossible : ' . $e->getMessage();
+		return;
+	}
+
+	if ( ! $stmt = $conn->query('SELECT * FROM auteur')) {
+		die(var_export($conn->errorinfo(), TRUE));
+	}
+
+	//Lance la création du tableau
+	$table = new Table('Liste des auteurs');
+
+	$table->addHeadersStr(array(
+		'Id',
+		'Nom',
+		'Prénom',
+		'Année de naissance'
+	));
+
+	foreach ($stmt as $data) {
+		$table->addRowStr(array(
+			$data['id_auteur'],
+			$data['nom'],
+			$data['prenom'],
+			$data['date_naissance']
+		));
+	}
+
+	$table->render();
+
+}
+
 function main() {
 	simpleTab();
 	matrixTab();
+	fromDbTab();
 }
 
 main();
